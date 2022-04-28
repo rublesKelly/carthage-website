@@ -1,0 +1,63 @@
+nav{
+    margin: 0 auto;
+    display: flex;
+    background-color: #333;
+}
+
+nav>a{
+    font: 1em sans-serif;
+    padding: .6em;
+    background-color: #d6f;
+}
+
+h1{
+    background-color: #fff;
+}
+
+form{
+    display: grid;
+}
+
+img{
+    height: auto;
+    width: 420px;
+    opacity: 45%;
+    transition: opacity 1s;
+}
+
+img:hover{
+    opacity: 100%;
+}
+
+form>input{
+    margin-bottom: 2em;
+}
+
+label, input, textarea {
+    display:block;
+    width: 30em;
+    box-sizing: border-box;
+}
+.form-control{
+    margin-bottom: 1em;
+}
+
+textarea{
+    min-height: 10em;
+}
+
+.form-control input
+.form-control textarea{
+    padding: 0.5em;
+}
+
+.grid{
+    border:solid;
+     display:grid; 
+     /* width: 80vw;
+     height: 40vh; */
+     place-items: center center;
+     grid-gap: 2em;
+     grid-template-columns: 1fr 1fr; 
+     grid-template-rows: auto;
+}
