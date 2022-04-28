@@ -1,3 +1,4 @@
+/* Basic Template css */
 nav{
     margin: 0 auto;
     display: flex;
@@ -10,25 +11,14 @@ nav>a{
     background-color: #d6f;
 }
 
-h1{
-    background-color: #fff;
+/* Page specific css */
+.grid{
+    display: grid;
 }
 
 form{
     display: grid;
 }
-
-img{
-    height: auto;
-    width: 420px;
-    opacity: 45%;
-    transition: opacity 1s;
-}
-
-img:hover{
-    opacity: 100%;
-}
-
 form>input{
     margin-bottom: 2em;
 }
@@ -49,15 +39,4 @@ textarea{
 .form-control input
 .form-control textarea{
     padding: 0.5em;
-}
-
-.grid{
-    border:solid;
-     display:grid; 
-     /* width: 80vw;
-     height: 40vh; */
-     place-items: center center;
-     grid-gap: 2em;
-     grid-template-columns: 1fr 1fr; 
-     grid-template-rows: auto;
 }
