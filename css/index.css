@@ -1,28 +1,13 @@
-/* Basic Template css */
-nav{
+.grid{
+    display: grid;
+    grid-gap: 2em;
     margin: 0 auto;
-    display: flex;
-    background-color: #333;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
 }
 
-nav>a{
-    font: 1em sans-serif;
-    padding: .6em;
-    background-color: #d6f;
-}
-
-img{
-    margin: auto 0;
-    height: 100%;
-    width: auto;
-}
-
-/* Page specific css */
 h1{
     background-color: #fff;
 }
-
-
-
 
 
