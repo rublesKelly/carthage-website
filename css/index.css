@@ -9,10 +9,17 @@
 h1{
     background-color: #fff;
 }
-
+.hero{
+    text-align: center;
+    margin: 0 auto;
+}
 #heroTitle{
-    background: rgba(red, green, blue, alpha);
+    text-align: center;
+}
+
+#heroTitleBckgrd{
     opacity: 70%;
+    background-color: blueviolet;
 }
 
 
