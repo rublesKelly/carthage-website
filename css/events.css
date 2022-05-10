@@ -1,20 +1,22 @@
-/* Basic Template css */
-nav{
-    margin: 0 auto;
-    display: flex;
-    background-color: #333;
+.eventCard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #573;
 }
 
-nav>a{
-    font: 1em sans-serif;
-    padding: .6em;
-    background-color: #d6f;
+.eventCard>img{
+    place-self: center center;
+    grid-column-start: 2;
 }
 
-img{
-    margin: auto 0;
-    height: 100%;
-    width: auto;
+.eventCard>h2, h3, h6, p{
+    grid-column-start: 1;
 }
 
-/* Page specific css */
+h3{
+    margin-bottom: 0;
+}
+
+h6{
+    margin: .4em;
+}
