@@ -1,30 +1,40 @@
 body{
     max-width: 1000px;
     margin: 0 auto;
+    font-family: sans-serif;
 }
 nav{
     margin: 0 auto;
     display: flex;
     place-items: center center;
-    background-color: #eee;
+    background-color: #fefefe;
 }
 
 nav>a{
-    font: .8em sans-serif;
-    margin: 0 auto;
+    font: .6em sans-serif;
+    margin: 0 .5rem;
     color: cornflowerblue;
+    text-decoration: none;
+
 }
 
 nav>img{
     width: 60px;
     height: auto;
-
+    margin: 0 auto;
+    margin-left: 0;
+    margin-right: 2.5rem;
 }
 
 img{
     margin: 0 auto;
     width: 100%;
     height: auto;
+}
+
+h3{
+    font-size: 1.6rem;
+    /* font-weight: lighter; */
 }
 
 #footerNav{

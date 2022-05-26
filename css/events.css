@@ -1,16 +1,26 @@
 .eventCard{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 1rem auto;
     background-color: #573;
 }
 
 .eventCard>img{
     place-self: center center;
     grid-column-start: 2;
+    width: 18rem;
+    height: auto;
 }
 
 .eventCard>h2, h3, h6, p{
     grid-column-start: 1;
+}
+
+.eventCard>button{
+    width: 8rem;
+    background-color: transparent;
+    border-color: aqua;
+    color: aqua;
 }
 
 h3{
