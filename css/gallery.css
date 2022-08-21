@@ -1,19 +1,27 @@
-.grid{
-    border:solid;
-     display:grid; 
-     /* width: 80vw;
-     height: 40vh; */
-     place-items: center center;
-     grid-gap: 2em;
-     grid-template-columns: 1fr 1fr; 
-     grid-template-rows: auto;
-}
 
-img{
-    opacity: 45%;
-    transition: opacity 1s;
-}
 
-img:hover{
-    opacity: 100%;
+@media (min-width: 460px){
+    .imgGrid{        
+        display:grid; 
+        /* width: 80vw;
+        height: 40vh; */
+        place-items: center center;
+        grid-gap: 2em;
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: auto;
+    }
+
+    p{
+        font-size: .9rem;
+    }
+
+    .imgGrid>img{
+        opacity: 65%;
+        transition: opacity 1s ease;
+
+    }
+
+    img:hover{
+        opacity: 100%;
+    }
 }

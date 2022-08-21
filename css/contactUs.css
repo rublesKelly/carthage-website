@@ -1,39 +1,63 @@
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    place-items: left center;
-    padding-top: 4em;
-}
-.gridItem{
-    min-width: 10em;
-}
+@media (min-width: 460px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        place-items: left center;
+        padding-top: 4em;
+    }
+    .gridItem{
+        min-width: 10em;
+    }
 
-iframe{
-    width: 22em;
-    height: 22em;
-}
-form{
-    display: grid;
-}
-form>input{
-    margin-bottom: 2em;
-}
+    iframe{
+        width: 26em;
+        height: 26em;
+    }
+    form{
+        display: grid;
+    }
+    form>input{
+        margin-bottom: 2em;
+        padding-top: 1rem;
+    }
 
-label, input, textarea {
-    display:block;
-    min-width: 8em;
-    box-sizing: border-box;
-}
-.form-control{
-    margin-bottom: 1em;
-}
+    label, input, textarea {
+        margin: 1rem;
+        display:block;
+        min-width: 8em;
+        box-sizing: border-box;
+    }
+    .form-control{
+        margin-bottom: 1em;
+    }
 
-textarea{
-    min-height: 10em;
-}
+    textarea{
+        min-height: 10em;
+    }
 
-.form-control input
-.form-control textarea{
-    padding: 0.5em;
+    button{
+        max-width: 6rem;
+    }
+    input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	select,
+	textarea {		
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background: transparent;
+		border: solid 2px var(--onyx);
+		border-radius: 0.25rem;
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 0.75rem;
+		text-decoration: none;
+		
+		
+	}
 }

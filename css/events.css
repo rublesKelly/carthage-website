@@ -1,32 +1,35 @@
-:root{
-    /* CSS HEX */
-    --royal-purple: #714f94ff;
-    --cyber-grape: #533a6dff;
-    --onyx: #3c4043ff;
-    --rich-black-fogra-39: #0a1110ff;
-    --arylide-yellow: #e5cd5dff;
+
+
+@media (min-width: 460px){
+
+.events{
+    margin-top: 6rem;
 }
-
-@media (min-width: 960px){
-
 .eventCard{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 1rem auto;
-    /* background-color: var(--arylide-yellow); */
+    background-color: var(--arylide-yellow-light);
     
 }
 
 .eventCard>img{
     place-self: center center;
+    grid-row: 1 / 5;
+    
     grid-column-start: 2;
-    width: 18rem;
+    max-width: 16rem;
+    max-height: 16rem;
     height: auto;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .eventCard>h2, h3, h6, p{
+    padding-left: 1rem;
     grid-column-start: 1;
-}
+    color: var(--onyx);
+}  
 
 .eventCard>button{
     width: 8rem;
@@ -37,6 +40,7 @@
 }
 
 .eventCard>p{
+    font-size: .75rem;
     word-wrap: break-word;
   word-break: break-all;
 }
@@ -48,5 +52,25 @@ h3{
 
 h6{
     margin: .4em;
+}
+
+.cart{
+    position: fixed;
+    z-index: 2;
+    left: 76%;
+    top: 2rem;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    height: 6rem;
+    width: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: .5rem;
+    max-width: 15rem;
+    background-color:var(--arylide-yellow-light);
+}
+
+.cart>button{
+    background-color: coral;
 }
 

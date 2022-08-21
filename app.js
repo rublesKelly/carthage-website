@@ -1,11 +1,11 @@
 // SELECT ELEMENTS for cart
-const eventsEl = document.querySelector(".events");
 const cartItemsEl = document.querySelector(".cart-items");
 const subtotalEl = document.querySelector(".subtotal");
 const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 //Select elements for HTML template 
 const navbarEl = document.querySelector(".navBar");
 const footerEl = document.querySelector(".footer");
+
 
 //Render HTML template
 function renderHTMLtemplate(){
@@ -36,30 +36,13 @@ function renderHTMLtemplate(){
 }
 renderHTMLtemplate();
 
-//Render events
-function renderevents() {
-    events.forEach((event) => {
-      eventsEl.innerHTML += `
-      <div class="eventCard">
-            <h3>${event.title}</h3>
-            <h6><strong>Date:</strong>${event.date}</h6>
-            <div>
-                <p>${event.description}</p>
-                <img src="${event.imgSrc}" alt="">
-            </div>
-            <button class="add-to-cart" onclick="(addToCart(${event.id})">Book Now</button>
-        </div>`;
-    });
-}
-renderevents();
-
-//Cart
+//Cart should be put in a seperate file and link tagged to events page
 let cart = JSON.parse(localStorage.getItem("CART")) || [];  //Declare state
 updateCart(); 
 
 // update cart run often to keep cart up to date
 function updateCart() {
-    renderCartItems();
+    
     renderSubtotal();
     
     
@@ -68,11 +51,11 @@ function updateCart() {
 
 //Add to cart
 function addToCart(id) {
-    // check if product already exist in cart
+    // check if event already exist in cart
     if (cart.some((item) => item.id === id)) {
         changeNumberOfUnits("plus", id);
     } else {
-        const item = products.find((product) => product.id === id);
+        const item = events.find((event) => event.id === id);
         
         cart.push({
             ...item,
@@ -96,7 +79,7 @@ function renderSubtotal() {
     totalItems = 0;
     
     cart.forEach((item) => {
-        totalPrice += item.price * item.numberOfUnits;
+        totalPrice += item.EurPrice * item.numberOfUnits;
         totalItems += item.numberOfUnits;
     });
     

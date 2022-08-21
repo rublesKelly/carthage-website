@@ -1,0 +1,111 @@
+@media (min-width: 460px){
+
+    .attractionsGallery{
+        display: grid;
+        grid-template-columns: 3rem 1fr 3rem;
+    }
+    
+    .back, .forward{
+        place-self: center center;
+        cursor: pointer;
+        width: auto;
+        height: auto;        
+        padding: 1rem;
+        color: grey;
+        font-weight: bold;
+        font-size: 19px;
+        transition: 0.4s ease;
+        border-radius: 5px 5px 5px 5px;
+        user-select: none;
+    }
+
+    /* Place the "forward button" to the right */
+    .forward {
+        
+        border-radius: 4px 0 0 4px;
+    }
+  
+    /*when the user hovers,add a black background with some little opacity */
+    .back:hover, .forward:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    .attractions{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: .5rem auto;
+    }
+    
+    .attractionCard{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 1rem;
+        width: clamp(10rem, 16rem, 18rem);        
+        background-color: var(--arylide-yellow-light);
+    }
+
+    .attractionCard>img{
+        place-self: center center;
+        grid-column-start: 1;
+        object-fit: cover;
+        width: 100%;
+        height: clamp(1rem, 10rem, 10rem);  
+    }
+
+    .cardTextSection{
+        padding: 1rem;
+    }
+
+    
+    .cardTextSection>p{
+        color: var(--onyx);
+        font-size: .75rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;        
+        height: 10rem;
+    }
+
+    h4{
+        color:var(--onyx);
+    }
+
+    /* .attractions{
+        grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
+    } */
+    
+    /* .attractionCard{
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        background-color: coral;
+        --r: calc(var(--position) - var(--offset));
+        --abs: max(calc(var(--r) * -1), var(--r));
+        transition: all 0.25s linear;
+        transform: rotateY(calc(-10deg * var(--r)))
+          translateX(calc(-300px * var(--r)));
+        z-index: calc((var(--position) - var(--abs)));
+    }
+
+    .attractionCard:nth-of-type(1) {
+        --offset: 1;
+        background-color: #90f1ef;
+      }
+      .attractionCard:nth-of-type(2) {
+        --offset: 2;
+        background-color: #ff70a6;
+      } */
+}
