@@ -36,6 +36,46 @@ function renderHTMLtemplate(){
 }
 renderHTMLtemplate();
 
+//GeoLocation 
+const el = document.getElementById("demo");
+
+//This function has four atgs the latitude and longitude of two locations and returns the distance between them in km
+function calcDist(lat1, lon1, lat2, lon2) 
+{
+  var R = 6371; // km
+  var dLat = toRad(lat2-lat1);
+  var dLon = toRad(lon2-lon1);
+  var lat1 = toRad(lat1);
+  var lat2 = toRad(lat2);
+
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c;
+  return d;
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+	  //getCurPos() calls showPosition and inputs a location object in the args
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    el.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+//For now outputs coordinates to element 
+function showPosition(position) {
+   latCurrent = position.coords.latitude
+   longCurrent = position.coords.longitude
+   latTunis = 36.806389 
+   longTunis = 10.181667
+
+    distTunis = calcDist(latTunis, longTunis, latCurrent, longCurrent)
+    el.innerHTML = `You are ${distTunis} from Tunis`
+}
+
+    
+
 //Cart should be put in a seperate file and link tagged to events page
 let cart = JSON.parse(localStorage.getItem("CART")) || [];  //Declare state
 updateCart(); 
