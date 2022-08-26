@@ -36,24 +36,33 @@ function renderHTMLtemplate(){
 }
 renderHTMLtemplate();
 
-//GeoLocation 
-const el = document.getElementById("demo");
-
+//GeoLocation
 //This function has four atgs the latitude and longitude of two locations and returns the distance between them in km
 function calcDist(lat1, lon1, lat2, lon2) 
 {
-  var R = 6371; // km
-  var dLat = toRad(lat2-lat1);
-  var dLon = toRad(lon2-lon1);
-  var lat1 = toRad(lat1);
-  var lat2 = toRad(lat2);
-
-  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    var R = 6371; // km
+    var dLat = toRad(lat2-lat1);
+    var dLon = toRad(lon2-lon1);
+    var lat1 = toRad(lat1);
+    var lat2 = toRad(lat2);
+    
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
     Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-  var d = R * c;
-  return d;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    var d = R * c;
+    d = Math.round(d)
+    return d;
 }
+
+    //Helper function for calcDist that converts numeric degrees to radians
+        function toRad(Value) 
+        {
+            return Value * Math.PI / 180;
+        }
+
+//Grab element to be used to display results
+const el = document.getElementById("GEO");
+console.log(el)
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -63,15 +72,15 @@ function getLocation() {
     el.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
-//For now outputs coordinates to element 
+ 
 function showPosition(position) {
-   latCurrent = position.coords.latitude
-   longCurrent = position.coords.longitude
-   latTunis = 36.806389 
-   longTunis = 10.181667
+    latCurrent = position.coords.latitude
+    longCurrent = position.coords.longitude
+    latTunis = 36.806389 
+    longTunis = 10.181667
 
     distTunis = calcDist(latTunis, longTunis, latCurrent, longCurrent)
-    el.innerHTML = `You are ${distTunis} from Tunis`
+    el.innerHTML = `You are ${distTunis}km away from Tunis`
 }
 
     
