@@ -15,11 +15,11 @@
         font-size: .9rem;
     }
 
-    .imgGrid>img{
+    /* .imgGrid>img{
         opacity: 65%;
         transition: opacity 1s ease;
 
-    }
+    } */
 
     img:hover{
         opacity: 100%;
