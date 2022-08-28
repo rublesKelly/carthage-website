@@ -19,7 +19,7 @@ function renderImages(){
 
     carthageImages.forEach((src, index) => {
         imgGridEl.innerHTML += `
-        <img src="${src}" alt="Image not found" >`
+        <img class="w3-opacity-min" src="${src}" alt="Image not found" >`
     })
 }
 
