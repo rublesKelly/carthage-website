@@ -56,3 +56,15 @@ function renderAttractions() {
     });
 }
 renderAttractions();
+
+//Carosuel Animation 
+const backBtn = document.querySelector(".back")
+const fowardBtn = document.querySelector(".forward")
+const card2 = document.querySelector(".attractionCard:nth-of-type(2)")
+
+function changeSlides(num) {
+    console.log("hello")
+    //get offset of card1 
+    //change it to offset + num
+    card2.style.setProperty("--position", card2.style.getProperty(position - num))
+}
