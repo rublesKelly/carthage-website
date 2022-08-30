@@ -65,4 +65,12 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+    .sun{
+        transition: all 1s;
+        transition-timing-function: ease-in-out;
+      }
+    
+      .sun:hover{
+        padding: 10rem;
+      }
 }

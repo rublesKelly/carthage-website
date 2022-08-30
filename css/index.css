@@ -81,4 +81,13 @@
     /* position: relative;
     bottom: 18rem; */
   }
+
+  .sun{
+    transition: all 1s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .sun:hover{
+    padding: 10rem;
+  }
 }

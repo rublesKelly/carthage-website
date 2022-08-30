@@ -30,7 +30,7 @@ function renderHTMLtemplate(){
             <i class="fa-brands fa-google-plus-g"></i>
             <i class="fa-brands fa-instagram"></i>    
         </div>
-        <canvas id="sun" style="margin: 0 auto;"></canvas>  `
+        <canvas id="sun" class="sun" style="margin: 0 auto;"></canvas>  `
 }
 renderHTMLtemplate();
 
