@@ -60,11 +60,28 @@ renderAttractions();
 //Carosuel Animation 
 const backBtn = document.querySelector(".back")
 const fowardBtn = document.querySelector(".forward")
+//Cards selection
+const cards = []
+const card1 = document.querySelector(".attractionCard:nth-of-type(1)")
 const card2 = document.querySelector(".attractionCard:nth-of-type(2)")
+const card3 = document.querySelector(".attractionCard:nth-of-type(3)")
+cards.push(card1, card2, card3)
 
-function changeSlides(num) {
-    console.log("hello")
-    //get offset of card1 
-    //change it to offset + num
-    card2.style.setProperty("--position", card2.style.getProperty(position - num))
+function changeSlide(num) {
+    let newNum = 0
+
+    cards.forEach((card) => {
+     
+        //Get offset of card 
+        style = getComputedStyle(card)
+        console.log(style);
+        offset = parseInt(style.getPropertyValue('--offset'))
+        console.log(offset);
+
+        newNum = offset + num
+        console.log(newNum)
+        //Change offset + num
+        card.style.setProperty("--offset", toString(newNum))
+    })
+    
 }
