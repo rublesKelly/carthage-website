@@ -1,0 +1,31 @@
+[
+    {
+        "id": "4",
+        "EurPrice":"12",
+        "title": "The Tunisia Historical Grand Prix",
+        "date": "Saturday, October 27, 2018 to Sunday, October 28, 2018",
+        "description": "If you happen to be a car enthusiast and history buff, Yasmine Hammamet launches the experience that will entertain you while enjoying your hobby. During 2 days, October 27 and 28, the tourism resort of Yasmine Hammamet will immerse you in the exciting world of the Tunisia Historical Grand Prix. This event will be a call for every car lover and person who wants to see historical gems since 1928.",
+        "imgSrc": "src/resources/Events/visuel_octobre_public_final.jpg",
+        "numberOfUnits": "1"
+    },
+
+    {
+        "id": "5",
+        "EurPrice": "23",
+        "title": "International Dates Festival: A delight for all the senses",
+        "date": "Thursday, November 1, 2018 to Sunday, November 4, 2018",
+        "description": "Kebili, a jewel of the Tunisian Sahara, is truly a destination all desert lovers should add to their bucket list. Fantastic weather, breathtaking scenery and great vibes catch visitors’ eyes and make them wish they could stay forever. Particularly known for its date palms, Kebili is hosting, between the 1st and the 4th of November, the International Dates Festival in its 35th edition.",
+        "imgSrc": "src/resources/Events/5.png",
+        "numberOfUnits": "1"
+    },
+
+    {
+        "id": "6",
+        "EurPrice": "18",
+        "title": "A Stream of Passion Through Music and History",
+        "date": "Friday, October 12, 2018",
+        "description": "Tunisia surely knows how to celebrate October in a dreamy way. The great atmosphere and magical landscapes make this time of year perfect for welcoming autumn lovers all over the world. One other reason to love this month : Musical October ! In his 24th edition, this event is still a wonderful tribute to classical and chamber music. For all those who have the slightest interest in the genre, we invite you to come and take part in a musical journey that never fails to delight its audience.",
+        "imgSrc": "src/resources/Events/6.jpg",
+        "numberOfUnits": "1"
+    }
+]

@@ -60,3 +60,38 @@ function renderEvents() {
 }
 renderEvents();
 
+//Lazy Loader with XML 
+function loadDoc() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+            moreEvents = JSON.parse(xhttp.responseText)
+            console.log(xhttp.responseText) 
+            renderMoreEvents()     
+        }
+    };
+    xhttp.open("GET", "ExtraEvents.txt", true);
+    xhttp.send();
+  }
+
+//Render more events
+const moreEventsEl = document.querySelector(".moreEvents");
+
+
+function renderMoreEvents() {
+    moreEvents.forEach((event) => {
+      eventsEl.innerHTML += `
+      <div class="eventCard">
+            <h3>${event.title}</h3>
+            <h6><strong>Date:</strong>${event.date}</h6>
+            
+                <p>${event.description}</p>
+                <img src="${event.imgSrc}" alt="">
+            
+            <button class="add-to-cart" onclick="addToCart(${event.id})">Book Now</button>
+        </div>`;
+    });
+}
+
+
+
