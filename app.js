@@ -1,11 +1,7 @@
-// SELECT ELEMENTS for cart
-const cartItemsEl = document.querySelector(".cart-items");
-const subtotalEl = document.querySelector(".subtotal");
-const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
+
 //Select elements for HTML template 
 const navbarEl = document.querySelector(".navBar");
 const footerEl = document.querySelector(".footer");
-
 
 //Render HTML template
 function renderHTMLtemplate(){
@@ -15,7 +11,8 @@ function renderHTMLtemplate(){
         <a href="cityHistoryGallery.html">Gallery</a>
         <a href="events.html">Events</a>
         <a href="localAttractionsVenueGuide.html">Attractions</a>
-        <a href="contacts.html">Contact Us</a>`
+        <a href="contacts.html">Contact Us</a>
+        `
     footerEl.innerHTML += `
         <div id="footerNav">
             <a href="">Mobile app</a>
@@ -31,10 +28,32 @@ function renderHTMLtemplate(){
             <i class="fa-brands fa-twitter"></i>
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-google-plus-g"></i>
-            <i class="fa-brands fa-instagram"></i>
-        </div>`
+            <i class="fa-brands fa-instagram"></i>    
+        </div>
+        <canvas id="sun" style="margin: 0 auto;"></canvas>  `
 }
 renderHTMLtemplate();
+
+//Canvas scripting setup
+const canvasEl = document.getElementById("sun");
+const sun = canvasEl.getContext("2d");
+//Draw sun
+sun.beginPath();
+sun.arc(95, 50, 40, 0, 2 * Math.PI);
+
+
+// Create gradient
+const grd = sun.createRadialGradient(75, 50, 5, 90, 60, 100);
+grd.addColorStop(0, "yellow");
+grd.addColorStop(1, "white");
+
+// Fill with gradient
+sun.fillStyle = grd;
+sun.fillRect(10, 10, 150, 80);
+ 
+
+
+
 
 //GeoLocation
 //This function has four atgs the latitude and longitude of two locations and returns the distance between them in km
@@ -85,57 +104,3 @@ function showPosition(position) {
 
     
 
-//Cart should be put in a seperate file and link tagged to events page
-let cart = JSON.parse(localStorage.getItem("CART")) || [];  //Declare state
-updateCart(); 
-
-// update cart run often to keep cart up to date
-function updateCart() {
-    
-    renderSubtotal();
-    
-    
-    localStorage.setItem("CART", JSON.stringify(cart));   // save cart to local storage
-}
-
-//Add to cart
-function addToCart(id) {
-    // check if event already exist in cart
-    if (cart.some((item) => item.id === id)) {
-        changeNumberOfUnits("plus", id);
-    } else {
-        const item = events.find((event) => event.id === id);
-        
-        cart.push({
-            ...item,
-            numberOfUnits: 1,
-        });
-    }
-    
-    updateCart();
-} 
-
-//Remove item from cart
-function removeItemFromCart(id) {
-    cart = cart.filter((item) => item.id !== id);
-    
-    updateCart();
-}
-
-// calculate and render subtotal
-function renderSubtotal() {
-    let totalPrice = 0,
-    totalItems = 0;
-    
-    cart.forEach((item) => {
-        totalPrice += item.EurPrice * item.numberOfUnits;
-        totalItems += item.numberOfUnits;
-    });
-    
-    subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
-    totalItemsInCartEl.innerHTML = totalItems;
-}
-
-
-//Helper/tester functions
-console.log(event.title);

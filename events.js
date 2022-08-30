@@ -66,11 +66,13 @@ function loadDoc() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
             moreEvents = JSON.parse(xhttp.responseText)
-            console.log(xhttp.responseText) 
+            // moreEvents = xhttp.responseText
+            console.log(moreEvents) 
+            console.log(events);
             renderMoreEvents()     
         }
     };
-    xhttp.open("GET", "ExtraEvents.txt", true);
+    xhttp.open("GET", "ExtraEvents.js", true);
     xhttp.send();
   }
 
@@ -80,7 +82,7 @@ const moreEventsEl = document.querySelector(".moreEvents");
 
 function renderMoreEvents() {
     moreEvents.forEach((event) => {
-      eventsEl.innerHTML += `
+      eventsEl.innerHTML = `
       <div class="eventCard">
             <h3>${event.title}</h3>
             <h6><strong>Date:</strong>${event.date}</h6>
