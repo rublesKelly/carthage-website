@@ -8,5 +8,7 @@ socket.onmessage = ({ data }) => {
 
 //Send message to server 
 document.querySelector('.wsButton').onclick = () => {
-    socket.send('hello');
+    data = document.getElementById("testimonial").value
+    console.log(data);
+    socket.send(data.toString());
 }

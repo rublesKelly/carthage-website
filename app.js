@@ -62,7 +62,7 @@ function calcDist(lat1, lon1, lat2, lon2)
 
 //Grab element to be used to display results
 const el = document.getElementById("GEO");
-console.log(el)
+// console.log(el)
 
 function getLocation() {
   if (navigator.geolocation) {

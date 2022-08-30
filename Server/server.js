@@ -26,8 +26,7 @@
 
 
 
-// Regular Websockets
-// import WebSocket from 'ws'
+// Server-side Websocket
 const WebSocket = require('ws')
 const server = new WebSocket.Server({ port: '8080' })
 
